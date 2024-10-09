@@ -8,6 +8,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Table;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\DeleteBulkAction;
@@ -85,7 +86,7 @@ class UserResource extends Resource
                     ->dateTime()
                     ->sortable(),
 
-                Tables\Columns\BadgeColumn::make('roles.name')
+                BadgeColumn::make('roles.name')
                     ->label('Roller')
                     ->colors([
                         'success' => fn ($state) => $state === 'admin',
@@ -100,6 +101,7 @@ class UserResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
