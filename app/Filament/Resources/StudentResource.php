@@ -125,11 +125,5 @@ class StudentResource extends Resource
         ];
     }
 
-    protected function getHeaderWidgets(): array
-    {
-        return [
-            DonationStatsOverview::class,
-        ];
-    }
 
 }

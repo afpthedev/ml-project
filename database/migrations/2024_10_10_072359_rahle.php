@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orphan_supports', function (Blueprint $table) {
+        Schema::create('rahles', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->text('notes')->nullable();
+            $table->string('first_name'); // İsim
+            $table->string('last_name');  // Soyisim
+            $table->integer('amount')->default(50); // Miktar, varsayılan 50
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orphan_supports');
+        //
     }
 };

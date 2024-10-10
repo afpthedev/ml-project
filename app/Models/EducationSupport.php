@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class OrphanSupport extends Model
+class EducationSupport extends Model
 {
     use HasFactory;
-
-
     protected $fillable = [
-        'first_name',
+      'first_name',
         'last_name',
-        'email',
-        'phone',
-        'address',
-
     ];
+    protected static function booted()
+    {
+        static::creating(function ($kumanya) {
+            $kumanya->amount = 50;
+        });
+    }
 }

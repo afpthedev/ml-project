@@ -10,6 +10,8 @@ use Filament\Tables;
 use Filament\Resources\Pages\CreateRecord;
 use Filament\Resources\Pages\EditRecord;
 use Filament\Resources\Pages\ListRecords;
+use Filament\Tables\Enums\FiltersLayout;
+use Filament\Tables\Filters\SelectFilter;
 
 class KirveResource extends Resource
 {
@@ -50,7 +52,12 @@ class KirveResource extends Resource
                 Tables\Columns\TextColumn::make('phone_number')->label('Telefon Numarası'),
                 Tables\Columns\TextColumn::make('created_at')->label('Kayıt Tarihi')->date(),
             ])
-            ->filters([])
+            ->filters([
+                SelectFilter::make('status')
+                    ->options([
+                        'Ödendi' => 'Ödendi',
+                        'Ödenmedi' => 'Ödenmedi',
+                    ])], layout: FiltersLayout::Modal)
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),

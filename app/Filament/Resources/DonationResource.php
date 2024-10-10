@@ -65,9 +65,8 @@ class DonationResource extends Resource
             ->filters([
                 SelectFilter::make('status')
                     ->options([
-                        'draft' => 'Draft',
-                        'reviewing' => 'Reviewing',
-                        'published' => 'Published',
+                        'Ödendi' => 'Ödendi',
+                        'Ödenmedi' => 'Ödenmedi',
                     ])], layout: FiltersLayout::Modal)
             ->actions([
 

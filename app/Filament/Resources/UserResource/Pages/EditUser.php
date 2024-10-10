@@ -9,6 +9,11 @@ class EditUser extends EditRecord
 {
     protected static string $resource = UserResource::class;
 
+    protected function getRedirectUrl(): string
+    {
+        // Bağış oluşturulduktan sonra yönlendirilecek URL
+        return $this->getResource()::getUrl('index');
+    }
     protected function mutateFormDataBeforeSave(array $data): array
     {
         // Şifre alanı doluysa hash'lemek, değilse kaldırmak
