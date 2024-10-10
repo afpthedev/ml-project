@@ -1,11 +1,11 @@
 #!/bin/bash
 
 
-RUN chmod +x /app/deploy.sh
+
 
 # Make sure this file has executable permissions, run `chmod +x deploy.sh` to ensure it does
 COPY deploy.sh /app/deploy.sh
-
+RUN chmod +x /app/deploy.sh
 # Clear cache
 php artisan optimize:clear
 
