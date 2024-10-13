@@ -19,8 +19,8 @@ class KumanyaResource extends Resource
 {
     protected static ?string $model = Kumanya::class;
 
-    protected static ?string $navigationGroup = 'Bağış Yönetimi';
-    protected static ?string $navigationIcon = 'heroicon-o-gift';
+    protected static ?string $navigationGroup = 'Bağış İşlemleri';
+    protected static ?string $navigationIcon = 'heroicon-o-user-plus';
 
     protected static ?string $navigationLabel = 'Kumanya Bağışları';
 

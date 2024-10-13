@@ -17,7 +17,7 @@ class DonationResource extends Resource
 {
     protected static ?string $model = Donation::class;
 
-    protected static ?string $navigationGroup = 'İşlemler';
+    protected static ?string $navigationGroup = 'Bağış İşlemleri';
 
     protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
     protected static ?string $navigationLabel = 'Bağış Kayıtları';

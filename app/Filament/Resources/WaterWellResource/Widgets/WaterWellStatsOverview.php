@@ -10,6 +10,7 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class WaterWellStatsOverview extends BaseWidget
 {
+
     protected function getCards(): array
     {
         return [

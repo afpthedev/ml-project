@@ -4,7 +4,9 @@ namespace App\Providers\Filament;
 
 use App\Filament\Resources\DonationResource\Widgets\Donation;
 use App\Filament\Resources\DonationResource\Widgets\DonationChart;
+use App\Filament\Resources\KurbanResource\Widgets\LatestKurbans;
 use App\Filament\Resources\LatestOrderResource\Widgets\LatestDonations;
+use App\Filament\Resources\WaterWellResource\Widgets\LatestWaterWell;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -30,6 +32,10 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->registration()
+        ->passwordReset()
+        ->emailVerification()
+        ->profile(Pages\Auth\EditProfile::class)
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -42,8 +48,9 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
-                DonationChart::class, // Kendi widget'ınızı buraya ekleyin
-
+                DonationChart::class,
+                LatestWaterWell::class,
+                LatestKurbans::class,
             ])
             ->middleware([
                 EncryptCookies::class,

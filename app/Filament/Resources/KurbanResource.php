@@ -19,8 +19,8 @@ class KurbanResource extends Resource
 {
     protected static ?string $model = Kurban::class;
 
-    protected static ?string $navigationGroup = 'Bağış Yönetimi';
-    protected static ?string $navigationIcon = 'heroicon-o-gift';
+    protected static ?string $navigationGroup = 'Bağış İşlemleri';
+    protected static ?string $navigationIcon = 'heroicon-o-bolt';
     protected static ?string $navigationLabel = 'Kurban Bağışları';
 
     public static function form(Form $form): Form
