@@ -20,3 +20,4 @@ yarn-error.log
 /.vscode
 /.zed
 ml_project/ml-service
+docker-compose.yml
