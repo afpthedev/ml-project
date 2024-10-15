@@ -19,7 +19,6 @@ class KurbanResource extends Resource
 {
     protected static ?string $model = Kurban::class;
 
-    protected static ?string $navigationGroup = 'Bağış İşlemleri';
     protected static ?string $navigationIcon = 'heroicon-o-bolt';
     protected static ?string $navigationLabel = 'Kurban Bağışları';
 
