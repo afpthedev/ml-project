@@ -20,7 +20,6 @@ class WaterWellResource extends Resource
 {
     protected static ?string $model = WaterWell::class;
 
-    protected static ?string $navigationGroup = 'Bağış İşlemleri';
     protected static ?string $navigationIcon = 'heroicon-o-globe-europe-africa';
     protected static ?string $navigationLabel = 'Su Kuyusu';
     protected static ?string $pluralLabel = 'Su Kuyuları';

@@ -20,7 +20,6 @@ class HijabScarfSupportResource extends Resource
 {
     protected static ?string $model = HijabSupport::class;
 
-    protected static ?string $navigationGroup = 'Destek İşlemleri';
     protected static ?string $navigationIcon = 'heroicon-o-sparkles';
     protected static ?string $navigationLabel = 'Tesettür-Eşarp Desteği';
     protected static ?string $pluralLabel = 'Tesettür-Eşarp Destekleri';

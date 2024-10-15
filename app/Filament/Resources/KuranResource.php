@@ -19,7 +19,6 @@ class KuranResource extends Resource
 {
     protected static ?string $model = Kuran::class;
 
-    protected static ?string $navigationGroup = 'Destek İşlemleri';
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
     protected static ?string $navigationLabel = 'Kuranı Kerim';

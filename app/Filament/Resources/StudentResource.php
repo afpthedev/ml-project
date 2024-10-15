@@ -21,7 +21,6 @@ class StudentResource extends Resource
 {
     protected static ?string $model = Student::class;
 
-    protected static ?string $navigationGroup = 'Öğrenci İşlemleri';
 
     protected static ?string $navigationLabel = 'Öğrencilerimiz';
 

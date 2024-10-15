@@ -19,7 +19,6 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class RahleResource extends Resource
 {
     protected static ?string $model = Rahle::class;
-    protected static ?string $navigationGroup = 'Destek İşlemleri';
     protected static ?string $navigationLabel = 'Rahle';
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';

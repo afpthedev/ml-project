@@ -19,7 +19,6 @@ class EducationSupportResource extends Resource
 {
     protected static ?string $model = EducationSupport::class;
 
-    protected static ?string $navigationGroup = 'Destek İşlemleri';
     protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
     protected static ?string $navigationLabel = 'Eğitim Desteği';
     protected static ?string $pluralLabel = 'Eğitim Destekleri';
