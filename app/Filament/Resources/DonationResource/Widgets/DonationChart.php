@@ -62,9 +62,8 @@ class DonationChart extends ChartWidget
     {
         return [
             'responsive' => true,
-            'maintainAspectRatio' => false, // Grafik boyutlarını serbest bırakıyoruz
-            'height' => 10000, // Sabit yükseklik
-            'width' => 1000, // Sabit genişlik
+            'maintainAspectRatio' => true, // Grafik boyutlarını serbest bırakıyoruz
+
         ];
     }
 }

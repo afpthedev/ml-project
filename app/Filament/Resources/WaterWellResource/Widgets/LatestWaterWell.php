@@ -42,4 +42,13 @@ class LatestWaterWell extends ChartWidget
     {
         return 'pie'; // Pie chart kullanıyoruz
     }
+
+    protected function getOptions(): array
+    {
+        return [
+            'responsive' => true,
+            'maintainAspectRatio' => true, // Grafik boyutlarını serbest bırakıyoruz
+
+        ];
+    }
 }
