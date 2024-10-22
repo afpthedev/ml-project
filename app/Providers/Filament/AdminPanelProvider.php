@@ -2,10 +2,8 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Resources\DonationResource\Widgets\Donation;
 use App\Filament\Resources\DonationResource\Widgets\DonationChart;
 use App\Filament\Resources\KurbanResource\Widgets\LatestKurbans;
-use App\Filament\Resources\LatestOrderResource\Widgets\LatestDonations;
 use App\Filament\Resources\WaterWellResource\Widgets\LatestWaterWell;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
