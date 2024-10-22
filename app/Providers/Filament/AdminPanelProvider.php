@@ -46,8 +46,9 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 DonationChart::class,
-                LatestWaterWell::class,
                 LatestKurbans::class,
+                LatestWaterWell::class,
+
             ])
             ->middleware([
                 EncryptCookies::class,

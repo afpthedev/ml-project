@@ -14,44 +14,40 @@ class DonationChart extends ChartWidget
 
     protected function getData(): array
     {
-        // Donation verilerini çekiyoruz
+        // Donation bağış miktarını çekiyoruz
         $donationData = Trend::model(Donation::class)
             ->between(
                 start: now()->startOfYear(),
                 end: now()->endOfYear(),
             )
             ->perMonth()
-            ->sum('amount');
+            ->sum('amount'); // Bağış miktarını topluyoruz
 
-        // Kurban verilerini çekiyoruz
+        // Kurban bağış miktarını çekiyoruz
         $kurbanData = Trend::model(Kurban::class)
             ->between(
                 start: now()->startOfYear(),
                 end: now()->endOfYear(),
             )
             ->perMonth()
-            ->sum('amount');
-
-        // Örnek olarak başka bir tablodan ürün verilerini çekiyoruz
-
+            ->sum('amount'); // Kurban bağış miktarını topluyoruz
 
         return [
             'datasets' => [
                 [
                     'label' => 'Monthly Donations',
-                    'data' => $donationData->map(fn (TrendValue $value) => $value->aggregate),
+                    'data' => $donationData->map(fn (TrendValue $value) => $value->aggregate), // Donation verisi
                     'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
                     'borderColor' => 'rgba(75, 192, 192, 1)',
                     'borderWidth' => 1,
                 ],
                 [
                     'label' => 'Kurban Donations',
-                    'data' => $kurbanData->map(fn (TrendValue $value) => $value->aggregate),
+                    'data' => $kurbanData->map(fn (TrendValue $value) => $value->aggregate), // Kurban verisi
                     'backgroundColor' => 'rgba(255, 99, 132, 0.2)',
                     'borderColor' => 'rgba(255, 99, 132, 1)',
                     'borderWidth' => 1,
                 ],
-
             ],
             'labels' => $donationData->map(fn (TrendValue $value) => $value->date), // Ayları göstermek için
         ];
@@ -59,6 +55,16 @@ class DonationChart extends ChartWidget
 
     protected function getType(): string
     {
-        return 'bar'; // Sütun grafiği olarak ayarlıyoruz
+        return 'bar'; // Sütun grafiği
+    }
+
+    protected function getOptions(): array
+    {
+        return [
+            'responsive' => true,
+            'maintainAspectRatio' => false, // Grafik boyutlarını serbest bırakıyoruz
+            'height' => 400, // Sabit yükseklik
+            'width' => 500, // Sabit genişlik
+        ];
     }
 }
