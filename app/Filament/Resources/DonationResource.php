@@ -43,7 +43,8 @@ class DonationResource extends Resource
                     ->nullable(),
                 Forms\Components\DatePicker::make('donation_date')
                     ->label('Bağış Tarihi')
-                    ->nullable(),
+                    ->nullable()
+                ->default(now()),
                 Forms\Components\TextInput::make('amount')
                     ->label('Bağış Miktarı')
                     ->numeric()
