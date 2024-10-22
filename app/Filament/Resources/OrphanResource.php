@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class OrphanResource extends Resource
 {
     protected static ?string $model = Orphan::class;
+    protected static ?string $navigationGroup = 'Projeler';
 
     protected static ?string $navigationLabel = 'Yetim';
 

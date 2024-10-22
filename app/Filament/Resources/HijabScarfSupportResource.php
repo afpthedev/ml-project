@@ -19,6 +19,7 @@ use Filament\Tables\Columns\TextColumn;
 class HijabScarfSupportResource extends Resource
 {
     protected static ?string $model = HijabSupport::class;
+    protected static ?string $navigationGroup = 'Projeler';
 
     protected static ?string $navigationIcon = 'heroicon-o-sparkles';
     protected static ?string $navigationLabel = 'Tesettür-Eşarp Desteği';

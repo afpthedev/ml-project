@@ -18,6 +18,7 @@ use Filament\Tables\Columns\TextColumn;
 class EducationSupportResource extends Resource
 {
     protected static ?string $model = EducationSupport::class;
+    protected static ?string $navigationGroup = 'Projeler';
 
     protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
     protected static ?string $navigationLabel = 'Eğitim Desteği';

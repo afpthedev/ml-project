@@ -18,6 +18,7 @@ use Filament\Tables\Columns\TextColumn;
 class KumanyaResource extends Resource
 {
     protected static ?string $model = Kumanya::class;
+    protected static ?string $navigationGroup = 'Projeler';
 
     protected static ?string $navigationIcon = 'heroicon-o-user-plus';
 

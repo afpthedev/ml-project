@@ -18,6 +18,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class RahleResource extends Resource
 {
+
+    protected static ?string $navigationGroup = 'Projeler';
+
     protected static ?string $model = Rahle::class;
     protected static ?string $navigationLabel = 'Rahle';
 

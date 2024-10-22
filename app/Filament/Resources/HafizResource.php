@@ -19,6 +19,7 @@ use Filament\Tables\Columns\TextColumn;
 class HafizResource extends Resource
 {
     protected static ?string $model = Hafiz::class;
+    protected static ?string $navigationGroup = 'Projeler';
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
     protected static ?string $navigationLabel = 'Hafız';

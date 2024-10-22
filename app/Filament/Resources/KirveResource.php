@@ -16,6 +16,7 @@ use Filament\Tables\Filters\SelectFilter;
 class KirveResource extends Resource
 {
     protected static ?string $model = Kirve::class;
+    protected static ?string $navigationGroup = 'Projeler';
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
     protected static ?string $navigationLabel = 'Kirve Listesi';
