@@ -19,6 +19,9 @@ use Filament\Tables\Columns\TextColumn;
 
 class KurbanResource extends Resource
 {
+    protected static ?string $navigationGroup = 'Bağışlar';
+
+
     protected static ?string $model = Kurban::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-bolt';

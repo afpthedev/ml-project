@@ -15,6 +15,9 @@ use Filament\Tables\Table;
 
 class DonationResource extends Resource
 {
+    protected static ?string $navigationGroup = 'Bağışlar';
+
+
     protected static ?string $model = Donation::class;
 
 
