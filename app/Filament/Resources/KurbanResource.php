@@ -103,15 +103,14 @@ class KurbanResource extends Resource
                 TextColumn::make('status')
                     ->label('Durum')
                     ->sortable(),
-                TextColumn::make('Notes')
-                    ->label('Notlar')
-                    ->sortable(),
                 TextColumn::make('payment_type')
                     ->label('Ödeme Türü')->sortable(),
                 TextColumn::make('association')
                     ->label('Dernek')
                     ->sortable(),
-
+                TextColumn::make('Notes')
+                    ->label('Notlar')
+                    ->sortable(),
             ])
             ->filters([
                 SelectFilter::make('status')
