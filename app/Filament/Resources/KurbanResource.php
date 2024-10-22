@@ -8,6 +8,7 @@ use Filament\Forms;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Forms\Form;
+use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -121,9 +122,14 @@ class KurbanResource extends Resource
                     ]),
             ], layout: FiltersLayout::Modal)
             ->actions([
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+
+
+                ActionGroup::make([
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ]),
+
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
