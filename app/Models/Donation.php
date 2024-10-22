@@ -22,5 +22,8 @@ class Donation extends Model
         'address',
         'donation_date',
         'amount',
+        'association',
+        'payment_type',
+
     ];
 }

@@ -13,6 +13,8 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 
 class KurbanResource extends Resource
@@ -26,13 +28,54 @@ class KurbanResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('donor_name')->label('Bağışçı Adı')->required(),
-                TextInput::make('animal_type')->label('Kurban Türü')->required(),
-                DatePicker::make('sacrifice_date')->label('Kurban Kesim Tarihi')->required(),
+                TextInput::make('donor_name')
+                    ->label('Bağışçı Adı')
+                    ->required(),
+                Select::make('association')
+                    ->label('Dernek')
+                    ->options([
+                        'MANA' => 'MANA',
+                        'SAHA' => 'SAHA',
+                        'HİCAZ' => 'HİCAZ',
+                        'HEDEF' => 'HEDEF',
+                    ])->default('MANA')
+                    ->required(),
+                Select::make('animal_type')
+                    ->label('Kurban Türü')
+                    ->options([
+                        'Adak' => 'Adak',
+                        'Şifa' => 'Şifa',
+                        'Sadakalı Şifa' => 'Sadakalı Şifa',
+                        'Akika' => 'Akika',
+                    ])->default('Adak')
+                    ->required(),
+                DatePicker::make('sacrifice_date')
+                    ->label('Kurban Kesim Tarihi')
+                    ->required()
+                ->default(now()),
                 TextInput::make('amount')
                     ->label('Bağış Miktarı')
-                    ->default(50) // Varsayılan değer 50
-                    ->disabled(), // Kullanıcı bu alanı değiştiremesin
+                    ->default(50),
+                Select::make('status')
+                    ->label('Durum')
+                    ->options([
+                        'Ödendi' => 'Ödendi',
+                        'Ödenmedi' => 'Ödenmedi',
+                    ])
+                    ->default('Ödenmedi') // Varsayılan değer Ödenmedi
+                    ->required(),
+                Textarea::make('Notes')
+                    ->label('Notlar')
+                    ->nullable(), // İsteğe bağlı
+                Select::make('payment_type')
+                    ->label('Ödeme Türü')
+                    ->options([
+                        'Paypal' => 'Paypal',
+                        'Nakit' => 'Nakit',
+                        'Banka' => 'Banka',
+                    ])->default('Banka')
+                ->required(),
+
             ]);
     }
 
@@ -40,22 +83,49 @@ class KurbanResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('donor_name')->label('Bağışçı Adı')->sortable()->searchable(),
-                TextColumn::make('animal_type')->label('Kurban Türü')->sortable(),
-                TextColumn::make('sacrifice_date')->label('Kurban Kesim Tarihi')->sortable(),
-                TextColumn::make('amount')->label('Bağış Miktarı')->sortable(),
+                TextColumn::make('donor_name')
+                    ->label('Bağışçı Adı')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('animal_type')
+                    ->label('Kurban Türü')
+                    ->sortable(),
+                TextColumn::make('sacrifice_date')
+                    ->label('Kurban Kesim Tarihi')
+                    ->sortable(),
+                TextColumn::make('amount')
+                    ->label('Bağış Miktarı')
+                    ->sortable(),
+                TextColumn::make('status')
+                    ->label('Durum')
+                    ->sortable(),
+                TextColumn::make('Notes')
+                    ->label('Notlar')
+                    ->sortable(),
+                TextColumn::make('payment_type')
+                    ->label('Ödeme Türü')->sortable(),
+                TextColumn::make('association')
+                    ->label('Dernek')
+                    ->sortable(),
+
             ])
             ->filters([
                 SelectFilter::make('status')
+                    ->label('Durum')
                     ->options([
                         'Ödendi' => 'Ödendi',
                         'Ödenmedi' => 'Ödenmedi',
-                    ])], layout: FiltersLayout::Modal)
-            ->actions([Tables\Actions\ViewAction::make(), Tables\Actions\EditAction::make(), Tables\Actions\DeleteAction::make()])
-            ->bulkActions([Tables\Actions\DeleteBulkAction::make()]);
+                    ]),
+            ], layout: FiltersLayout::Modal)
+            ->actions([
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\DeleteBulkAction::make(),
+            ]);
     }
-
-
 
     public static function getPages(): array
     {

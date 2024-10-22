@@ -13,14 +13,13 @@ class Kurban extends Model
         'donor_name',
         'animal_type',
         'sacrifice_date',
-        // 'amount' alanını burada belirlemiyoruz çünkü otomatik olarak 50 olarak atanacak
+        'amount',
+        'status',
+        'Notes',
+        'payment_type',
+        'association', // Dernek alanı eklendi
     ];
 
     // amount alanını otomatik olarak 50'ye ayarlamak için model olayını kullanıyoruz
-    protected static function booted()
-    {
-        static::creating(function ($kurban) {
-            $kurban->amount = 150;
-        });
-    }
+
 }
