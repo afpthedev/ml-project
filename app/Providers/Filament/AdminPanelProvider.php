@@ -65,7 +65,7 @@ class AdminPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->plugins([
-                FilamentSpatieLaravelHealthPlugin::make(),
+
               ])
             ->authMiddleware([
                 Authenticate::class,

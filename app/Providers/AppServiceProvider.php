@@ -30,16 +30,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Health::checks([
-            CacheCheck::new(),
-            OptimizedAppCheck::new()
-                ->checkConfig()
-                ->checkRoutes(),
-            DebugModeCheck::new(),
-            EnvironmentCheck::new(),
-            DatabaseCheck::new(),
-            PingCheck::new()->url('http://52.59.228.91'),
-            UsedDiskSpaceCheck::new(),
-            CpuLoadCheck::new(),]);
+        //
     }
 }
