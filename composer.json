@@ -13,7 +13,10 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "maatwebsite/excel": "^3.1",
+        "shuvroroy/filament-spatie-laravel-health": "^2.1",
+        "spatie/cpu-load-health-check": "*",
         "spatie/laravel-permission": "^6.9",
+        "spatie/security-advisories-health-check": "*",
         "tomatophp/filament-twilio": "^1.0"
     },
     "require-dev": {
