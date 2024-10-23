@@ -40,7 +40,7 @@ class LatestWaterWell extends ChartWidget
 
     protected function getType(): string
     {
-        return 'pie'; // Pie chart kullanıyoruz
+        return 'line'; // Pie chart kullanıyoruz
     }
 
     protected function getOptions(): array

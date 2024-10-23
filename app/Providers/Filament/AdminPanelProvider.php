@@ -51,8 +51,6 @@ class AdminPanelProvider extends PanelProvider
                 LatestWaterWell::class,
                 DonationChart::class,
                 LatestKurbans::class,
-
-
             ])
             ->middleware([
                 EncryptCookies::class,
