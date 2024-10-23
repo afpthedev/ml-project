@@ -39,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
             EnvironmentCheck::new(),
             DatabaseCheck::new(),
             PingCheck::new()->url('http://52.59.228.91'),
-            UsedDiskSpaceCheck::new(),]);
+            UsedDiskSpaceCheck::new(),
+            CpuLoadCheck::new(),]);
     }
 }
