@@ -35,6 +35,9 @@ class KurbanResource extends Resource
                 TextInput::make('donor_name')
                     ->label('Bağışçı Adı')
                     ->required(),
+                TextInput::make('phone_num')
+                    ->label('Bağışçı Telefon Numarası')
+                    ->required(),
                 Select::make('association')
                     ->label('Dernek')
                     ->options([
@@ -110,6 +113,9 @@ class KurbanResource extends Resource
                     ->sortable(),
                 TextColumn::make('Notes')
                     ->label('Notlar')
+                    ->sortable(),
+                TextColumn::make('video_upload_token')
+                    ->label('Takip Kodu')
                     ->sortable(),
             ])
             ->filters([

@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Resources\DonationResource\Widgets\DonationChart;
+use App\Filament\Resources\KurbanResource\Widgets\KurbanStatsOverview;
 use App\Filament\Resources\KurbanResource\Widgets\LatestKurbans;
 use App\Filament\Resources\WaterWellResource\Widgets\LatestWaterWell;
 use Filament\Http\Middleware\Authenticate;
@@ -44,6 +45,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
+                KurbanStatsOverview::class,
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
                 LatestWaterWell::class,
