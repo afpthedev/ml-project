@@ -24,7 +24,7 @@ class LatestKurbans extends BaseWidget
     {
         return [
             Tables\Columns\TextColumn::make('donor_name')
-                ->label('İsim Soyisim')->searchable(),
+                ->label('İsim Soyisim'),
             Tables\Columns\TextColumn::make('amount'),
         ];
     }
